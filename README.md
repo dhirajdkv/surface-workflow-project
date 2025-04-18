@@ -1,29 +1,76 @@
-# Create T3 App
+# Surface Workflow Project
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This project implements a workflow system for tracking and analyzing user interactions on websites.
 
-## What's next? How do I make an app with this?
+## Setup Instructions
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+1. Clone the repository:
+```bash
+git clone git@github.com:dhirajdkv/surface-workflow-project.git
+cd surface-workflow-project
+```
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+2. Install dependencies:
+```bash
+npm install
+# or
+pnpm install
+```
+
+3. Set up environment variables:
+```bash
+cp .env.example .env
+```
+
+4. Start the database:
+```bash
+# Make the script executable
+chmod +x start-database.sh
+# Start the database
+./start-database.sh
+```
+
+5. Push the Prisma schema to the database:
+```bash
+npx prisma db push
+```
+
+6. Start the development server:
+```bash
+npm run dev
+# or
+pnpm dev
+```
+
+## Project Structure
+
+- `/src` - Source code
+  - `/app` - Next.js app directory
+  - `/components` - React components
+- `/prisma` - Database schema and migrations
+- `/public` - Static assets
+
+## Technologies Used
 
 - [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
 - [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
 - [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- PostgreSQL
 
-## Learn More
+## Environment Variables
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+The following environment variables are required:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- `DATABASE_URL`: PostgreSQL connection URL (automatically configured by start-database.sh)
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+See `.env.example` for all available options.
 
-## How do I deploy this?
+## Development
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+1. Make your changes
+2. Run tests (if any)
+3. Submit a pull request
+
+## License
+
+[Add your license here]
